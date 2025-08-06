@@ -1,0 +1,42 @@
+body { 
+    
+    background: linear-gradient(rgba(153, 218, 250, 0.5));
+    
+}
+
+.navgal{
+    font-size: 20px;
+    width: 320px;
+}
+.label{
+    font-weight: bold;
+}
+.transparentback {
+    background-position: center;
+    background-repeat: no-repeat;
+    background: 
+        linear-gradient(rgba(255,255,255,0.5)) /* 白色半透明遮罩 */
+        url(海盗猫.jpg) center / 40% no-repeat;
+  min-height: 100vh;
+}
+header{
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0px;
+    top:0;
+    left:0;
+    right:0;
+    background-color: rgb(148, 148, 239);
+    position:fixed;
+    z-index: 50;
+}
+.mainzi{
+    font-size: 20px;
+}
+
+.nav{
+    padding-top:38px;
+}
+h1{
+    
+}

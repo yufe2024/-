@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>简易抽卡系统</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #card {
+            width: 200px;
+            height: 300px;
+            margin: 20px auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>简易抽卡系统</h1>
+    <div id="card">
+        <p>点击下方按钮抽卡</p>
+    </div>
+    <button id="draw-btn">抽卡</button>
+
+    <script>
+        // 1. 定义卡牌数据 - 只是一个简单的数组
+const cards = [
+    "普通卡牌A",
+    "普通卡牌B",
+    "稀有卡牌A",
+    "稀有卡牌B",
+    "史诗卡牌"
+];
+
+// 2. 获取页面上的元素
+const cardDisplay = document.getElementById("card");
+const drawButton = document.getElementById("draw-btn");
+
+// 3. 为按钮添加点击事件
+drawButton.addEventListener("click", function() {
+    // 4. 随机选择一张卡牌
+    const randomIndex = Math.floor(Math.random() * cards.length);
+    const selectedCard = cards[randomIndex];
+    
+    // 5. 显示抽到的卡牌
+    cardDisplay.innerHTML = `<h2>${selectedCard}</h2>`;
+    
+    // 6. 根据卡牌类型添加不同颜色
+    if (selectedCard.includes("普通")) {
+        cardDisplay.style.backgroundColor = "#dddddd";
+    } else if (selectedCard.includes("稀有")) {
+        cardDisplay.style.backgroundColor = "#bbbbff";
+    } else {
+        cardDisplay.style.backgroundColor = "#ffbbff";
+    }
+});
+    </script>
+</body>
+</html>
