@@ -12,3 +12,9 @@ header{
 body{
     background-color: rgb(129, 169, 240);
 }
+
+.left_float{
+    float: left;
+    width: 260;
+
+}
