@@ -12,7 +12,9 @@ header{
 body{
     background-color: rgb(129, 169, 240);
 }
-
+.tucao{
+    color: aliceblue;
+}
 .left_float{
     float: left;
     width: 260;
