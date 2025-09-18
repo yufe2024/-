@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航菜单</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            max-width: 600px;
+        }
+        
+        .nav-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+        
+        .nav-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2d3748;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .nav-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+            border-radius: 2px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            border-radius: 14px;
+            background-color: #f8fafc;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-item:hover {
+            background-color: #edf2f7;
+            transform: translateY(-3px);
+            border-color: #e2e8f0;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-item.active {
+            background: linear-gradient(135deg, #3498db 0%, #9b59b6 100%);
+            color: white;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        .nav-icon {
+            width: 28px;
+            height: 28px;
+            margin-right: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item.active .nav-icon {
+            transform: scale(1.15);
+        }
+        
+        .nav-text {
+            font-size: 1.15rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item.active .nav-text {
+            font-weight: 600;
+        }
+        
+        .nav-badge {
+            margin-left: auto;
+            background-color: #e53e3e;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            min-width: 28px;
+            text-align: center;
+        }
+        
+        .nav-item.active .nav-badge {
+            background-color: rgba(255, 255, 255, 0.25);
+            color: white;
+        }
+        
+        .nav-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #cbd5e0, transparent);
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .nav-divider span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f8fafc;
+            padding: 0 15px;
+            color: #718096;
+            font-size: 0.85rem;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #718096;
+            font-size: 0.95rem;
+            max-width: 600px;
+        }
+        
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #9b59b6;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            .nav-container {
+                padding: 25px;
+            }
+            
+            .nav-title {
+                font-size: 1.5rem;
+            }
+            
+            .nav-text {
+                font-size: 1rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>导航菜单设计</h1>
+            <p>基于您提供的截图样式，实现了一个现代化、响应式的导航菜单</p>
+        </header>
+        
+        <div class="nav-container">
+            <h1 class="nav-title">功能菜单</h1>
+            
+            <div class="nav-menu">
+                <div class="nav-item active">
+                    <div class="nav-icon"><i class="fas fa-feather-alt"></i></div>
+                    <span class="nav-text">说说</span>
+                    <span class="nav-badge">12</span>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-archive"></i></div>
+                    <span class="nav-text">时光归档</span>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-folder"></i></div>
+                    <span class="nav-text">分类</span>
+                    <span class="nav-badge">8</span>
+                </div>
+                
+                <div class="nav-divider"><span>更多功能</span></div>
+                
+                <div class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-film"></i></div>
+                    <span class="nav-text">AE 特效</span>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-link"></i></div>
+                    <span class="nav-text">友链</span>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-user-circle"></i></div>
+                    <span class="nav-text">关于我</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>点击菜单项可切换选中状态 | 基于Flexbox布局实现 | 使用Font Awesome图标</p>
+            <p>设计灵感来源于您提供的截图 | 代码完全手写实现</p>
+        </div>
+    </div>
+
+    <script>
+        // 添加菜单项交互
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.nav-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

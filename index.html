@@ -11,7 +11,44 @@
 
 </head>
 <style>
+a{
+    color: aliceblue;
+
+}
+.totalnav{
+    text-align: center;
+    border-radius: 50px;
+    padding: 0 15px;
+    height: 70px;
+    border: 2px solid #4a90e2;
+}
+.nav2{
+    width: 300px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 0 15px;
+    border: 2px solid #4a90e2;
+    background-color: #84909e;
+    font-size: 32px;
+    outline: none;
+    text-align: center;
+}
+
+.wenben{
+        width: 300px;
+        height: 60px;
+        border-radius: 50px;
+        padding: 0 15px;
+        border: 2px solid #4a90e2;
+        background-color: #4a90e2;
+        font-size: 16px;
+        outline: none;
+        text-align: center;
+}
+
+
 body { 
+    background-image: url(css/preview.jpg);
     background-image: url(css/猫猫.gif);
     background-attachment: fixed;
     background-size: 20%;
@@ -22,22 +59,25 @@ body {
 </style>
 <body>
     
+
+    <p>距离顶部太近了,下边的是导航</p>
 </body>
+<nav>
+    <div>
+    <span>
+        <div  class="totalnav">
+        <a href="gal.html" class="nav2">galgame</a>
+        <a href="25年八月\index\nav.html" class="nav2">日记</a>
+        <a href="booknav.html" class="nav2">读书</a>
+        <a href="others.html" class="nav2">others</a>             
+        <a href="http://eco.lilys.top/" class="nav2">杨筱曜学长的个人博客</a>
+        <div>
+        
+    </span> 
+    </div>
+</nav>
 
-    <nav class="navgal">
-            <div class="nav">
-                <a href="gal.html">galgame</a>
-                <br>
-                <a href="others.html">其他我玩过的游戏</a>
-                <br>                
-                <a href="25年八月\index\nav.html">每天的垃圾搬运加工环节</a>
-                <br>
-                <a href="booknav.html">我都看过哪些书（只有推荐的部分！）</a>
-
-           
-            </div>
-
-    </nav>
+    <br>
 
     <button id="chou">
         点击获取不能集换的集换式卡牌
@@ -45,9 +85,9 @@ body {
         <!-- <p>不想照搬steam那种，但是感觉真好吧，我不用来盈利没什么问题吧</p> -->
     </button>
     <div id="result">
+        <p>我想做成那种每月轮换的抽卡卡池，然后凑齐了一个月的全卡或者抽到隐藏卡可以让我请你吃饭之类的东西，但是我这是静态网站啊，做不出来啊</p>
         <p style="font-weight: bold;">结果在这里</p>
-        <p style="font-weight: bold;">是我超爱你四个字挑一个，我抽了两个爱两个你,（是百战水大人的2121反手，太有操作了）这个以后得改改，不然没什么每天写的动力，我已经不计我都抽到什么了，因为没有意义，就像我前几天说的，这个该关了</p>
-    
+        <p class="wenben">文本框测试</p>
     
         <P><a href="徒然喜欢你.html">徒然喜欢你</a></P>
         <p>这玩意一集怎么和舔甜歌姬一样长</p>
@@ -64,10 +104,7 @@ body {
         <p>避免背景猫猫挡住字</p>
         <p></p>
     </div>
-    <header>这个是主页
-        <br>
-        感觉转发的东西没什么人看，搞到这里了
-    </header>
+
     <div>
     </div>
     <script src="js/card.js"></script>

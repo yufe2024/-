@@ -1,0 +1,22 @@
+header{
+    padding-top: 18px;
+    padding-bottom: 0px;
+    top:0;
+    left:0;
+    right:0;
+    background-color: rgb(94, 94, 216);
+    position:fixed;
+    z-index: 50;
+    text-align: center;/*文字居中*/
+}
+body{
+    background-color: rgb(240, 205, 129);
+}
+.tucao{
+    color: aliceblue;
+}
+.left_float{
+    float: left;
+    width: 260;
+
+}
